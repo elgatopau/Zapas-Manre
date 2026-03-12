@@ -3,154 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zapas Manre | Calzado en Barcelona</title>
+    <title>Zapas Manre | Tienda Online Barcelona</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .cart-modal { display: none; }
         .cart-modal.active { display: block; }
     </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-50 font-sans text-gray-800">
 
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <span class="text-2xl font-bold text-blue-600">Zapas Manre</span>
-                    <span class="ml-2 text-xs text-gray-400">Barcelona</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#" class="text-gray-700 hover:text-blue-600">Inicio</a>
-                    <a href="#productos" class="text-gray-700 hover:text-blue-600">Zapatos</a>
-                    <a href="#contacto" class="text-gray-700 hover:text-blue-600">Contacto</a>
-                </div>
-                <div class="relative">
-                    <button onclick="toggleCart()" class="flex items-center text-gray-700 hover:text-blue-600">
-                        <span>🛒 Carrito</span>
-                        <span id="cart-count" class="ml-1 bg-red-500 text-white rounded-full px-2 text-xs">0</span>
-                    </button>
-                </div>
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+            <div class="flex flex-col">
+                <span class="text-2xl font-black text-blue-700 leading-none">ZAPAS MANRE</span>
+                <span class="text-[10px] uppercase tracking-widest text-gray-500">Barcelona Store</span>
             </div>
+            <div class="hidden md:flex space-x-6 font-medium">
+                <a href="#" class="hover:text-blue-600">Catálogo</a>
+                <a href="#contacto" class="hover:text-blue-600">Contacto</a>
+            </div>
+            <button onclick="toggleCart()" class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full flex items-center gap-2 hover:bg-blue-200 transition">
+                <span class="font-bold">🛒</span>
+                <span id="cart-count" class="bg-blue-700 text-white text-xs rounded-full px-2">0</span>
+            </button>
         </div>
     </nav>
 
-    <header class="bg-blue-50 py-16 text-center">
-        <h1 class="text-4xl font-extrabold text-gray-900">Pisa Fuerte en Barcelona</h1>
-        <p class="mt-4 text-lg text-gray-600">Las mejores tendencias de Zapas Manre a un click.</p>
-    </header>
-
-    <main id="productos" class="max-w-7xl mx-auto px-4 py-12">
-        <h2 class="text-2xl font-bold mb-8">Novedades</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <div class="bg-white p-4 rounded-lg shadow hover:shadow-xl transition">
-                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80" alt="Zapatilla" class="rounded-md mb-4">
-                <h3 class="font-bold text-lg">Air Manre Pro</h3>
-                <p class="text-gray-500 text-sm">Edición Limitada BCN</p>
-                <div class="flex justify-between items-center mt-4">
-                    <span class="text-xl font-bold text-blue-600">89,99€</span>
-                    <button onclick="addToCart('Air Manre Pro', 89.99)" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">+ Añadir</button>
+    <main class="max-w-7xl mx-auto px-4 py-10">
+        <h2 class="text-3xl font-bold mb-8 border-b-2 border-blue-600 inline-block">Nuestros Zapatos</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" class="h-52 w-full object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg">Air Manre BCN</h3>
+                    <p class="text-sm text-gray-500 italic">Deportiva urbana</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-xl font-bold">89,90€</span>
+                        <button onclick="addToCart('Air Manre BCN', 89.90)" class="bg-black text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700">Añadir</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="bg-white p-4 rounded-lg shadow hover:shadow-xl transition">
-                <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=400&q=80" alt="Zapatilla" class="rounded-md mb-4">
-                <h3 class="font-bold text-lg">Urban Street 2026</h3>
-                <p class="text-gray-500 text-sm">Estilo minimalista</p>
-                <div class="flex justify-between items-center mt-4">
-                    <span class="text-xl font-bold text-blue-600">55,00€</span>
-                    <button onclick="addToCart('Urban Street 2026', 55.00)" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">+ Añadir</button>
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500" class="h-52 w-full object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg">Cloud Pink Edition</h3>
+                    <p class="text-sm text-gray-500 italic">Máximo confort</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-xl font-bold">75,00€</span>
+                        <button onclick="addToCart('Cloud Pink Edition', 75.00)" class="bg-black text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700">Añadir</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="bg-white p-4 rounded-lg shadow hover:shadow-xl transition">
-                <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=400&q=80" alt="Zapatilla" class="rounded-md mb-4">
-                <h3 class="font-bold text-lg">Runner Green Forest</h3>
-                <p class="text-gray-500 text-sm">Sostenibilidad y confort</p>
-                <div class="flex justify-between items-center mt-4">
-                    <span class="text-xl font-bold text-blue-600">120,00€</span>
-                    <button onclick="addToCart('Runner Green Forest', 120.00)" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">+ Añadir</button>
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border">
+                <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500" class="h-52 w-full object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg">Green Forest Runner</h3>
+                    <p class="text-sm text-gray-500 italic">Materiales reciclados</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-xl font-bold">110,00€</span>
+                        <button onclick="addToCart('Green Forest Runner', 110.00)" class="bg-black text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700">Añadir</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="bg-white p-4 rounded-lg shadow hover:shadow-xl transition">
-                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=400&q=80" alt="Zapatilla" class="rounded-md mb-4">
-                <h3 class="font-bold text-lg">Sky Walker Pink</h3>
-                <p class="text-gray-500 text-sm">Moda urbana femenina</p>
-                <div class="flex justify-between items-center mt-4">
-                    <span class="text-xl font-bold text-blue-600">75,50€</span>
-                    <button onclick="addToCart('Sky Walker Pink', 75.50)" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">+ Añadir</button>
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border">
+                <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500" class="h-52 w-full object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg">Urban Classic Yellow</h3>
+                    <p class="text-sm text-gray-500 italic">Estilo retro</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-xl font-bold">64,50€</span>
+                        <button onclick="addToCart('Urban Classic Yellow', 64.50)" class="bg-black text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700">Añadir</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border">
+                <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500" class="h-52 w-full object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg">Street Master Brown</h3>
+                    <p class="text-sm text-gray-500 italic">Casual Otoño</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-xl font-bold">95,00€</span>
+                        <button onclick="addToCart('Street Master Brown', 95.00)" class="bg-black text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700">Añadir</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border">
+                <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500" class="h-52 w-full object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-lg">Professional Trainer</h3>
+                    <p class="text-sm text-gray-500 italic">Alto rendimiento</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-xl font-bold">135,00€</span>
+                        <button onclick="addToCart('Professional Trainer', 135.00)" class="bg-black text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700">Añadir</button>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <section id="contacto" class="bg-white py-16 border-t">
-        <div class="max-w-3xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">Contacta con Nosotros</h2>
-            <p class="text-gray-600 mb-8">¿Tienes dudas sobre tu pedido? Estamos en el corazón de Barcelona para ayudarte.</p>
-            <div class="bg-blue-50 p-6 rounded-lg inline-block">
-                <p class="text-lg font-semibold text-blue-800">Email oficial:</p>
-                <a href="mailto:test@test.com" class="text-xl text-blue-600 hover:underline">test@test.com</a>
+    <section id="contacto" class="bg-white py-16 border-t mt-10">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">¿Alguna pregunta?</h2>
+            <p class="text-gray-600 mb-6">Estamos en el centro de Barcelona atendiendo tus pedidos.</p>
+            <div class="p-6 bg-blue-50 rounded-2xl inline-block border border-blue-100">
+                <p class="text-sm text-blue-500 font-bold uppercase tracking-widest mb-2">Escríbenos a</p>
+                <a href="mailto:test@test.com" class="text-2xl font-bold text-blue-700 hover:underline">test@test.com</a>
             </div>
         </div>
     </section>
 
-    <div id="cart-modal" class="cart-modal fixed inset-0 bg-black bg-opacity-50 z-[60]">
-        <div class="bg-white max-w-md mx-auto mt-20 p-6 rounded-lg shadow-2xl">
-            <div class="flex justify-between items-center border-b pb-4">
-                <h2 class="text-xl font-bold">Tu Cesta</h2>
-                <button onclick="toggleCart()" class="text-gray-500 text-2xl">&times;</button>
+    <div id="cart-modal" class="cart-modal fixed inset-0 bg-black/50 backdrop-blur-sm z-[60]">
+        <div class="bg-white w-full max-w-md mx-auto mt-20 p-6 rounded-2xl shadow-2xl relative">
+            <button onclick="toggleCart()" class="absolute top-4 right-4 text-gray-400 hover:text-black text-2xl font-bold">&times;</button>
+            <h2 class="text-2xl font-bold mb-6 border-b pb-2">Tu Cesta</h2>
+            
+            <div id="cart-items" class="space-y-4 max-h-80 overflow-y-auto mb-6">
+                <p class="text-gray-400 italic">El carrito está vacío</p>
             </div>
-            <div id="cart-items" class="py-4 space-y-4 max-h-96 overflow-y-auto">
-                </div>
+
             <div class="border-t pt-4">
-                <div class="flex justify-between text-xl font-bold">
-                    <span>Total:</span>
-                    <span id="cart-total">0,00€</span>
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-gray-600">Total a pagar:</span>
+                    <span id="cart-total" class="text-2xl font-black text-blue-700">0,00€</span>
                 </div>
-                <button class="w-full bg-green-600 text-white py-3 rounded-lg mt-4 font-bold hover:bg-green-700">Tramitar Pedido</button>
+                <button onclick="checkout()" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition shadow-lg">
+                    Tramitar Pedido vía Email
+                </button>
             </div>
         </div>
     </div>
 
-    <footer class="bg-gray-800 text-white py-8 text-center mt-12">
-        <p>&copy; 2026 Zapas Manre Barcelona. Todos los derechos reservados.</p>
-    </footer>
-
     <script>
         let cart = [];
-        let total = 0;
 
         function toggleCart() {
             document.getElementById('cart-modal').classList.toggle('active');
         }
 
         function addToCart(name, price) {
-            cart.push({name, price});
-            updateCart();
+            cart.push({ name, price });
+            renderCart();
+            // Pequeña notificación visual
+            console.log("Añadido: " + name);
         }
 
-        function updateCart() {
-            const itemsContainer = document.getElementById('cart-items');
+        function renderCart() {
+            const container = document.getElementById('cart-items');
             const countLabel = document.getElementById('cart-count');
             const totalLabel = document.getElementById('cart-total');
             
-            itemsContainer.innerHTML = '';
-            total = 0;
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="text-gray-400 italic text-center py-4">El carrito está vacío</p>';
+                countLabel.innerText = "0";
+                totalLabel.innerText = "0,00€";
+                return;
+            }
 
+            container.innerHTML = '';
+            let sum = 0;
+            
             cart.forEach((item, index) => {
-                total += item.price;
-                itemsContainer.innerHTML += `
-                    <div class="flex justify-between items-center border-b pb-2">
-                        <span>${item.name}</span>
-                        <span class="font-bold">${item.price.toFixed(2)}€</span>
+                sum += item.price;
+                container.innerHTML += `
+                    <div class="flex justify-between items-center bg-gray-50 p-3 rounded-lg border">
+                        <span class="font-medium text-gray-700">${item.name}</span>
+                        <span class="font-bold text-blue-600">${item.price.toFixed(2)}€</span>
                     </div>
                 `;
             });
 
             countLabel.innerText = cart.length;
-            totalLabel.innerText = total.toFixed(2) + '€';
+            totalLabel.innerText = sum.toFixed(2) + "€";
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert("El carrito está vacío");
+                return;
+            }
+
+            // Construir la lista de nombres de los zapatos
+            const nombresZapatos = cart.map(item => "- " + item.name).join('%0D%0A');
+            const email = "test@test.com";
+            const asunto = "Nuevo Pedido - Zapas Manre Barcelona";
+            
+            // Cuerpo del mensaje
+            const cuerpo = `Hola Zapas Manre,%0D%0A%0D%0AQuisiera realizar un pedido de los siguientes modelos:%0D%0A${nombresZapatos}%0D%0A%0D%0APor favor, contacten conmigo para el pago.`;
+
+            // Abrir el cliente de correo
+            window.location.href = `mailto:${email}?subject=${asunto}&body=${cuerpo}`;
         }
     </script>
 </body>
